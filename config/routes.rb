@@ -9,7 +9,12 @@ Depot::Application.routes.draw do
 
   resources :products
 
-
+resources :line_items do
+    #member do
+    #  put 'decrement'
+    #end
+    put 'decrement', on: :member
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
