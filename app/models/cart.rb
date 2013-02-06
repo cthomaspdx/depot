@@ -1,4 +1,5 @@
 class Cart < ActiveRecord::Base
+  attr_accessible :id, :created_at, :updated_at
   has_many :line_items, dependent: :destroy 
   
   def add_product(product_id)
