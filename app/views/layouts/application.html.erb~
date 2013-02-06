@@ -5,6 +5,7 @@
   <title>Pragprog Books Online Store</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "orders/orders" %>
   <%= csrf_meta_tags %>
 </head>
 <!-- END:head -->
@@ -19,7 +20,7 @@
           
       <% if @cart -%>
       <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-        <%=j render @cart %>
+        <%= render @cart %>
       <% end %>
       <% end -%>
     <!-- END:hidden_div -->
