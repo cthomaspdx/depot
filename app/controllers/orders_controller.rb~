@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
      
       format.html # new.html.erb
       format.json { render json: @order }
-      format.js { j redirect_to new_order_path  }
+      format.js 
     end
   end
 
