@@ -1,5 +1,5 @@
 
-    <table>
+    <table class='table', >
   <!-- START_HIGHLIGHT -->
     <%= render(@cart.line_items) %>
   <!-- END_HIGHLIGHT -->
@@ -10,9 +10,8 @@
       </tr>
 
     </table>
-
-<%= button_to 'Check out', new_order_path, method: :get %>
-
+<div class="tophide" >
+<%= button_to 'Check out', new_order_path, method: :get, :class => 'btn btn-small btn-primary', remote: true %>
 <%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' }, remote: true %>
-
+    data: { confirm: 'Are you sure?' }, remote: true,:class => 'btn btn-small btn-inverse' %>
+</div>

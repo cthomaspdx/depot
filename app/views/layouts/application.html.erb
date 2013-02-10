@@ -61,13 +61,14 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Your Cart</li>
+              <li class="nav-header"><h4>Your Cart</h4></li>
+              </ul>
              <% if @cart -%>
               <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
                 <%= render @cart %>
               <% end %>
             <% end -%>                          
-            </ul>
+            
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
@@ -77,7 +78,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; ChadTClark 2012</p>
+        <p><small>&copy; ChadTClark 2013</small></p>
       </footer>
 
     </div> <!-- /container -->
