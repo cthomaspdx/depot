@@ -35,7 +35,34 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span8">
+          
+              <h1 class="fn"><u>Chad Thomas Clark</u></h1>
+                <h3 class="role">Junior Web Developer, Sound Engineer<br>&amp;Generally Handy Person</h3>
+                <button class="btn btn-primary show_hide" href="#" >Want to see my Resume (click here)</button>
+             
+        </div>
+        <div class="span4">
+           <ul class="contact">
+              <li><a href="mailto:#">ctclark@pdx.edu</a></li>
+              <li class="tel">(503)564-8530</li>
+              <li class="url"><a href="http://www.ChadTClark.com">Chad T Clark</a></li>
+              <li class="adr"><span class="locality">Portland, Oregon</span></li>
+              <li class="url twitter">@cthomaspdx</li>
+          </ul>
 
+          
+    </div>
+      </div>
+      
+       <div class="row-fluid">
+        <div class="span12">
+         <div class="slidingDiv"><%= render 'store/resume' %></div>
+        </div><!--/.span12-->
+      </div>
+     
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -44,10 +71,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-           <%= link_to "Sample Store", store_index_path, class: "brand" %>
+           <%= link_to "Chad's Sample Store", store_index_path, class: "brand" %>
               <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Home", store_index_path %></li>
+              <li><%= link_to "Resume", class: "resume" %></li>
               <li><%= link_to "Home", store_index_path %></li>
               <li><%= link_to "Home", store_index_path %></li>
              </ul>
@@ -55,23 +82,27 @@
         </div>
       </div>
     </div>
-
+  
+   
+  
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span4">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header"><h4>Your Cart</h4></li>
-              </ul>
+              
              <% if @cart -%>
               <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
                 <%= render @cart %>
               <% end %>
             <% end -%>                          
-            
+            </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">
+      
+        <div class="span8">
+          <div class="hidden"><%= render 'store/resume' %></div>
           <%= bootstrap_flash %>
           <%= yield %>
         </div>

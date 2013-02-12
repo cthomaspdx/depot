@@ -48,7 +48,7 @@ resources :line_items do
   #       get 'sold'
   #     end
   #   end
-
+  #match 'public/index' => 'resume#view'
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -69,13 +69,13 @@ resources :line_items do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+#root :to => 'high_voltage/pages#index', :id => 'index'
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'store#index', as: 'store'
 
   # See how all your routes lay out with "rake routes"
-
+  #match ':action' => 'static#:action'
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
