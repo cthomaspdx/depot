@@ -74,10 +74,19 @@
            <%= link_to "Chad's Sample Store", store_index_path, class: "brand" %>
               <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Resume", class: "resume" %></li>
               <li><%= link_to "Home", store_index_path %></li>
-              <li><%= link_to "Home", store_index_path %></li>
-             </ul>
+              <% if session[:user_id] %>
+
+              <li><%= link_to "View Orders", orders_path %></li>
+              <li><%= link_to "Add Products", new_product_path %></li>
+              <li><%= link_to "Edit Users", users_path %></li>
+              <li> <%= button_to 'Logout', logout_path, method: :delete, class: 'btn'  %></li>
+              <% else %>
+              <li><%= button_to 'Admin Login', login_path, class: 'btn'  %></li>
+
+            </ul>
+             
+              <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
