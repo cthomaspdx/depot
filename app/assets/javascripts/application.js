@@ -15,4 +15,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 
-//= require_directory .
+//= require_tree
