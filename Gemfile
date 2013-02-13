@@ -4,8 +4,8 @@ gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-#gem 'pg'
-gem 'sqlite3'
+gem 'pg'
+
 gem 'rb-readline'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,7 +33,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-
+  gem 'sqlite3'
 	
 end
 # Use unicorn as the app server
