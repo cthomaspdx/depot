@@ -1,3 +1,0 @@
-
-$('#cart').html("<%=  render @cart %>");
-$('this').hide('blind');

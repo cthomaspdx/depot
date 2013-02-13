@@ -1,2 +1,0 @@
-$('#columns #side input').hide('blind', 1000).after('<%= j redirect_to new_order_url %>')
-
