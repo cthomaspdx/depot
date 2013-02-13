@@ -80,9 +80,9 @@
               <li><%= link_to "View Orders", orders_path %></li>
               <li><%= link_to "Add Products", new_product_path %></li>
               <li><%= link_to "Edit Users", users_path %></li>
-              <li> <%= button_to 'Logout', logout_path, method: :delete, class: 'btn'  %></li>
+              <li> <%= button_to 'Logout', logout_path, method: :delete, :class => 'btn'  %></li>
               <% else %>
-              <li><%= button_to 'Admin Login', login_path, class: 'btn'  %></li>
+              <li><%= button_to 'Admin Login', login_path, :class => 'btn', :title => 'Click here and login admin pwd admin'  %></li>
 
             </ul>
              
