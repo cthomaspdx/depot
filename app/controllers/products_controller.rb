@@ -1,4 +1,4 @@
-
+require 'carrierwave'
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json

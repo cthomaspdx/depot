@@ -6,12 +6,13 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pg'
 gem 'carrierwave'
-gem 'rmagick'
+
 gem 'sunspot_rails'
 gem 'sunspot_solr'
  gem 'progress_bar'
  gem 'fog', '~> 1.0.0' 
  gem 'multi_json'
+ gem 'mini_magick'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
