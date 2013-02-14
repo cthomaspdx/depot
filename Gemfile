@@ -10,6 +10,8 @@ gem 'rmagick'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
  gem 'progress_bar'
+ gem 'fog', '~> 1.0.0' 
+ gem 'multi_json'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
