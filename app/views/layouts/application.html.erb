@@ -71,7 +71,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-           <%= link_to "Chad's Sample Store", store_index_path, class: "brand" %>
+           <%= link_to "Sample Store", store_index_path, class: "brand" %>
               <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", store_index_path %></li>
@@ -82,7 +82,7 @@
               <li><%= link_to "Edit Users", users_path %></li>
               <li> <%= button_to 'Logout', logout_path, method: :delete, :class => 'btn'  %></li>
               <% else %>
-              <li><%= button_to 'Admin Login', login_path, :class => 'btn', :title => 'Click here and login admin pwd admin'  %></li>
+              <li><%= button_to 'Admin Login', login_path, :class => 'btn', :title => 'Click here and login admin pwd admin', method: :get  %></li>
 
             </ul>
              
