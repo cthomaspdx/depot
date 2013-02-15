@@ -1,8 +1,9 @@
+
 class Product < ActiveRecord::Base
   attr_accessible :description, :image_url, :price, :title, :image, :remote_image_url
   has_many :orders, through: :line_items
   has_many :line_items
-  #before_destroy :ensure_not_referenced_by_any_line_item
+  before_destroy :ensure_not_referenced_by_any_line_item
   
   mount_uploader :image , ImageUploader
   
@@ -16,7 +17,7 @@ class Product < ActiveRecord::Base
   validates :image_url, :format => { :with => %r{\.(gif|jpeg|jpg|png)$}i,
                 message:  'must be a URL for GIF, JPG, JPEG or PNG image.' 
                 }
-  validates :title, :length => { :minimum => 10 }
+  validates :title, :length => { :minimum => 5 }
   
   private
   # ensure that there are no line items referencing this product
