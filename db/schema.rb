@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214015220) do
+ActiveRecord::Schema.define(:version => 20130216222047) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20130214015220) do
     t.string   "pay_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "pg_search_documents", :force => true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "products", :force => true do |t|

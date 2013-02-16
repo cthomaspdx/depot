@@ -95,6 +95,9 @@ GEM
     options (2.3.0)
       fattr
     pg (0.14.1)
+    pg_search (0.5.7)
+      activerecord (>= 3)
+      activesupport (>= 3)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     progress_bar (0.4.0)
@@ -185,6 +188,7 @@ DEPENDENCIES
   mini_magick
   multi_json
   pg
+  pg_search
   progress_bar
   rails (= 3.2.11)
   rb-readline
