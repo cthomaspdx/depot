@@ -78,9 +78,9 @@
               <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", store_index_path, :class => "active" %></li>
-              <form class="navbar-form pull-right">
+              <form class="navbar-form form-search pull-right">
               <%= form_tag store_index_path, :method => :get do %>
-              <%= text_field_tag :query, params[:query], :type => "text", :class => "span2" %>
+              <%= text_field_tag :query, params[:query], :type => "text", :class => "span2 input-mediu search-query" %>
               <%= submit_tag "Search", :name => nil, :type => "submit", :class => 'btn' %>
             </form>
               <% end %>          
