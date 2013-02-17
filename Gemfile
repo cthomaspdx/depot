@@ -7,7 +7,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'carrierwave'
 gem 'pg_search'
-
+gem 'twitter-bootstrap-rails'
  gem 'progress_bar'
  gem 'fog', '~> 1.0.0' 
  gem 'multi_json'
