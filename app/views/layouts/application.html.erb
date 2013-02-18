@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Depot" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Chad T. Clark" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -80,8 +80,8 @@
               <li><%= link_to "Home", store_index_path, :class => "active" %></li>
               <form class="navbar-form form-search pull-right">
               <%= form_tag store_index_path, :method => :get do %>
-              <%= text_field_tag :query, params[:query], :type => "text", :class => "span2 input-mediu search-query" %>
-              <%= submit_tag "Search", :name => nil, :type => "submit", :class => 'btn' %>
+              <%= text_field_tag :query, params[:query], :type => "text", :class => "span2 input-medium search-query pull-right", :style => "padding-left:10px"%>
+              <%= submit_tag "Search", :name => nil, :type => "submit", :class => 'btn ' %>
             </form>
               <% end %>          
               <% if session[:user_id] %>
