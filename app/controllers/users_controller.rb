@@ -72,8 +72,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    unless User.count < 2
     @user = User.find(params[:id])
     @user.destroy
+  end
 
     respond_to do |format|
       format.html { redirect_to users_url }
