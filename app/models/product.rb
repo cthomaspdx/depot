@@ -1,9 +1,10 @@
 
 class Product < ActiveRecord::Base
  
-  attr_accessible :description, :image_url, :price, :title, :image, :remote_image_url
+  attr_accessible :description, :price, :title, :image, :remote_image_url
   has_many :orders, through: :line_items
   has_many :line_items
+  has_many :reviews
   before_destroy :ensure_not_referenced_by_any_line_item
   
   mount_uploader :image , ImageUploader
@@ -14,7 +15,7 @@ class Product < ActiveRecord::Base
   validates :title, :description,  :presence => true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}  
   validates :title, :uniqueness => true
-  validates :image_url, :format => { :with => %r{\.(gif|jpeg|jpg|png)$}i,
+  validates :image, :format => { :with => %r{\.(gif|jpeg|jpg|png)$}i,
                 message:  'must be a URL for GIF, JPG, JPEG or PNG image.' 
                 }
   validates :title, :length => { :minimum => 5 }
