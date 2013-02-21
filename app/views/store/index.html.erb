@@ -5,19 +5,47 @@
 
 
 <% @products.each do |product| %>
-  <div class="entry">
-    <%= image_tag product.image_url(:thumb).to_s %>
-    <h3><%= product.title %></h3>
-    <p><%= sanitize(product.description) %></p>
-    <div class="price_line">
+  <table class="table table-borderd">
+    <tr>
+      <td><%= image_tag product.image_url(:thumb).to_s %></td>
+
+      <td><h3><%= product.title %></h3></td>
+    </tr>
+    <tr>
+      <td><%= sanitize(product.description) %></td>
+    </tr>
+    <tr>
+    
 <!-- START:currency -->
-      <span class="price"><%= number_to_currency(product.price) %></span>
+     <td><%= number_to_currency(product.price) %></td>
+          
 <!-- END:currency -->
-    <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+    <td><%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %></td>
     <% if session[:user_id] %>
-    	<%= button_to 'edit', edit_product_path(product), :method => 'get', :class => "btn btn-warning"  %>
+    	<td><%= button_to 'edit', edit_product_path(product), :method => 'get', :class => "btn btn-warning"  %></td>
     <% end %>
-    </div>
-  </div>
-  
+      </tr>
+        <% if product.reviews  %>
+        <% product.reviews.each do |review| %>
+     <tr><th class="text-info">Reviews</th>
+      <th class="text-info">Rating <%= review.rating %></th>
+
+      </tr>
+    
+      <tr>
+      
+        <td><%= review.rating  %></td>
+        <td><%= review.comment  %></td>
+      </tr>
+     <% end %>
+       <td><%= button_to 'new review', new_product_review_path(product), :method => 'get' %></td>
+      <td></td>
+        <% end %>
+    </tr>
+    <tr>
+
+    </tr>
+</table>
+ 
 <% end %>
+ 

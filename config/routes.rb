@@ -23,10 +23,13 @@ Depot::Application.routes.draw do
 
   resources :carts
 
+  
+
 
   get "store/index"
 
-  resources :products do
+  resources :products do 
+    resources :reviews
     get :who_bought, on: :member
     end
 
