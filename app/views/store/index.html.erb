@@ -8,11 +8,10 @@
   <table class="table table-borderd">
     <tr>
       <td><%= image_tag product.image_url(:thumb).to_s %></td>
-
       <td><h3><%= product.title %></h3></td>
     </tr>
     <tr>
-      <td><%= sanitize(product.description) %></td>
+      <td colspan="2"><%= sanitize(product.description) %></td>
     </tr>
     <tr>
     
@@ -25,16 +24,16 @@
     	<td><%= button_to 'edit', edit_product_path(product), :method => 'get', :class => "btn btn-warning"  %></td>
     <% end %>
       </tr>
+      <tr><th class="text-info">Rating average rating here.</th>
+      <th class="text-info">Reviews</th>
         <% if product.reviews  %>
         <% product.reviews.each do |review| %>
-     <tr><th class="text-info">Reviews</th>
-      <th class="text-info">Rating <%= review.rating %></th>
+     
 
       </tr>
     
       <tr>
-      
-        <td><%= review.rating  %></td>
+       <td><%= review.rating  %></td>
         <td><%= review.comment  %></td>
       </tr>
      <% end %>
