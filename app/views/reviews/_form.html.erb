@@ -1,0 +1,36 @@
+
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+ 
+  <%= form_for ([@product, @review]) do |f| %>
+
+  <div class="control-group">
+      <%= f.label :rating, :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :rating, (1..5), prompt: 'Select' %>
+    </div>
+  </div>
+  <div class="control-group">
+      <%= f.label :comment, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_area :comment, :class =>"text_field" %>
+    </div>
+  </div>
+    
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-inverse"%>
+  </div>
+   <% end %>
+
+
+
